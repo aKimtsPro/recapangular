@@ -12,6 +12,7 @@ import { EnfantComponent } from './bases/enfant/enfant.component';
 import { AddBurgerComponent } from './services/add-burger/add-burger.component';
 import { DetailBurgerComponent } from './services/detail-burger/detail-burger.component';
 import { CommonModule } from '@angular/common';
+import { EditBurgerComponent } from './services/edit-burger/edit-burger.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CommonModule } from '@angular/common';
     ObservablesComponent,
     EnfantComponent,
     AddBurgerComponent,
-    DetailBurgerComponent
+    DetailBurgerComponent,
+    EditBurgerComponent
   ],
   imports: [
     CommonModule,

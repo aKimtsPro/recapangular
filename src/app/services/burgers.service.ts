@@ -30,7 +30,11 @@ export class BurgersService {
     let burgerToUpdate = this._burgers.find(b => b.id === id);
 
     if(burgerToUpdate) {
-      burgerToUpdate = burger;
+      burgerToUpdate.name = burger.name;
+      burgerToUpdate.price = burger.price;
+      burgerToUpdate.picture = burger.picture;
+      burgerToUpdate.available = burger.available;
+      burgerToUpdate.ingredients = burger.ingredients;
     }
   }
 
