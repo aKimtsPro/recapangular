@@ -8,6 +8,7 @@ import { BurgersService } from './burgers.service';
   styleUrls: ['./services.component.scss']
 })
 export class ServicesComponent implements OnInit {
+  showSchem : boolean = false;
   burgerList : Burger[] = [];
 
   constructor(private _burgerService : BurgersService) {

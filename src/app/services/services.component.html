@@ -1,6 +1,9 @@
 <h1>Les services</h1>
 <div class="chapter">
-    <img src="/assets/images/schemaServices.PNG" alt="">
+    <button (click)="showSchem = !showSchem" >Afficher Schema</button>
+    <div *ngIf="showSchem">
+        <img src="/assets/images/schemaServices.PNG" alt="">
+    </div>
 </div>
 <div class="chapter">
     <h2>Nos délicieux burgers :</h2>
