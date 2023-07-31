@@ -14,7 +14,7 @@
             <img [src]="burger.picture" [alt]="burger.name">
             <p>{{ burger.price }}€</p>
             <div class="buttons">
-                <button>Détail 🔎</button>
+                <button routerLink="/burgers/{{burger.id}}">Détail 🔎</button>
                 <button>Éditer 📝</button>
                 <button>Supprimer ❌</button>
             </div>

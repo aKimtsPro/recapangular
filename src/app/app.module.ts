@@ -10,6 +10,8 @@ import { ObservablesComponent } from './observables/observables.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EnfantComponent } from './bases/enfant/enfant.component';
 import { AddBurgerComponent } from './services/add-burger/add-burger.component';
+import { DetailBurgerComponent } from './services/detail-burger/detail-burger.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -19,9 +21,11 @@ import { AddBurgerComponent } from './services/add-burger/add-burger.component';
     ServicesComponent,
     ObservablesComponent,
     EnfantComponent,
-    AddBurgerComponent
+    AddBurgerComponent,
+    DetailBurgerComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
