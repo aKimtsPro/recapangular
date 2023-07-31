@@ -16,7 +16,7 @@
             <div class="buttons">
                 <button routerLink="/burgers/{{burger.id}}">Détail 🔎</button>
                 <button routerLink="/burgers/edit/{{burger.id}}">Éditer 📝</button>
-                <button>Supprimer ❌</button>
+                <button (click)="delete(burger.id)">Supprimer ❌</button>
             </div>
         </div>
     </div>

@@ -18,4 +18,9 @@ export class ServicesComponent implements OnInit {
       this.burgerList = this._burgerService.getAll();
   }
 
+  delete(id : number) : void {
+    this._burgerService.delete(id);
+    this.burgerList = this._burgerService.getAll();
+  }
+
 }
