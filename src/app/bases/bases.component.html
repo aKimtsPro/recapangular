@@ -13,15 +13,21 @@
         <input type="text" [(ngModel)]="name">
         
         <h3>Attribute Binding</h3>
+        <p>S'utilise avec les [] pour lier un attribut html à une propriété</p>
         <img style="width:250px" [src]="imgSource" alt="">
 
         <h3>Event Binding</h3>
+        <p>S'utilise avec les () autour d'un évènement et est relié à une méthode</p>
         <p>{{ eventMsg }}</p>
         <button (click)="clickMe()">Click Me</button>
     </div>
     
     <div class="chapter">
         <h2>Pipes</h2>
+        <p>Sert à formater des données uniquement à l'affichage, ne change pas la valeur de la propriété. S'utilise avec |</p>
+        <p>Il existe des pipes de base (date, number, uppercase, currency, titlecase, lowercase, ...) et on peut aussi faire ses propres pipes (custom-pipes)</p>
+        <p>Le pipe date s'utilise soit sans argument, soit avec une locale, soit avec un format (soit locale + format) : {{ today | date : "dd/MM/yyyy" }} </p>
+        <p>Pour faire un custom-pipe : ng g p nomDuPipe</p>
     </div>
     
     <div class="chapter">

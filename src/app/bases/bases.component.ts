@@ -15,5 +15,6 @@ export class BasesComponent {
     this.eventMsg = 'You clicked me 👉👈';
   }
 
+  today : Date = new Date();
 
 }
