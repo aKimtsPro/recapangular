@@ -61,5 +61,16 @@
     
     <div class="chapter">
         <h2>Input/Output</h2>
+        <p>Permet à deux composants Parent/Enfant de discuter</p>
+        <p>Input : De parent vers enfant -> Une propriété</p>
+        <p>Output : D'enfant vers parent -> Un Event (EventEmitter) </p>
+
+        <p>Aujourd'hui, j'ai envie de</p>
+        <button (click)="setFoodType('burger')">Burger</button> 
+        <button (click)="setFoodType('sushi')">Sushis</button>
+
+        <app-enfant [type]="foodType" (selectMeal)="changeMeal($event)"></app-enfant>
+
+        <p *ngIf="todayMeal.length > 0">Super ! On va manger {{ foodType }} {{ todayMeal }} !!</p>
     </div>
 </div>

@@ -8,6 +8,7 @@ import { BasesComponent } from './bases/bases.component';
 import { ServicesComponent } from './services/services.component';
 import { ObservablesComponent } from './observables/observables.component';
 import { FormsModule } from '@angular/forms';
+import { EnfantComponent } from './bases/enfant/enfant.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     BasesComponent,
     ServicesComponent,
-    ObservablesComponent
+    ObservablesComponent,
+    EnfantComponent
   ],
   imports: [
     BrowserModule,

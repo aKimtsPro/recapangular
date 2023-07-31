@@ -37,4 +37,15 @@ export class BasesComponent {
 
   topWorstDriver : string[] = ['Français', 'Hollandais', 'Suisse'];
 
+  // INPUT/OUTPUT --------------------
+  foodType : string = '';
+  setFoodType(type : string) : void {
+    this.foodType = type;
+    this.todayMeal = '';
+  }
+  todayMeal : string = '';
+
+  changeMeal(meal : string) : void {
+    this.todayMeal = meal;
+  }
 }
