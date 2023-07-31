@@ -1,1 +1,34 @@
-<p>bases works!</p>
+<div>
+    <h1>Les bases</h1>
+    
+    <div class="chapter">
+        <h2>Bindings</h2>
+
+        <h3>One-Way :</h3>
+        <p> Permet d'afficher le contenu d'une propriété</p>
+        <p> Je suis {{ name }} </p>
+
+        <h3>Two-Way :</h3>
+        <p> Permet de modifier une propriété <span> Attention ! : Il faudra importer FormsModule dans le module adéquat </span></p>
+        <input type="text" [(ngModel)]="name">
+        
+        <h3>Attribute Binding</h3>
+        <img style="width:250px" [src]="imgSource" alt="">
+
+        <h3>Event Binding</h3>
+        <p>{{ eventMsg }}</p>
+        <button (click)="clickMe()">Click Me</button>
+    </div>
+    
+    <div class="chapter">
+        <h2>Pipes</h2>
+    </div>
+    
+    <div class="chapter">
+        <h2>Directives</h2>
+    </div>
+    
+    <div class="chapter">
+        <h2>Input/Output</h2>
+    </div>
+</div>
