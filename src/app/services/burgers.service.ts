@@ -34,6 +34,14 @@ export class BurgersService {
     }
   }
 
+  updateAvailability(id : number) : void {
+    let burgerToUpdate = this._burgers.find(b => b.id === id);
+
+    if(burgerToUpdate) {
+      burgerToUpdate.available = !burgerToUpdate.available;
+    }
+  }
+
   delete(id : number) : void {
     this._burgers = this._burgers.filter(b => b.id !== id);
   }

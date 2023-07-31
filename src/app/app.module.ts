@@ -7,8 +7,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { BasesComponent } from './bases/bases.component';
 import { ServicesComponent } from './services/services.component';
 import { ObservablesComponent } from './observables/observables.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EnfantComponent } from './bases/enfant/enfant.component';
+import { AddBurgerComponent } from './services/add-burger/add-burger.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,14 @@ import { EnfantComponent } from './bases/enfant/enfant.component';
     BasesComponent,
     ServicesComponent,
     ObservablesComponent,
-    EnfantComponent
+    EnfantComponent,
+    AddBurgerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,3 +2,22 @@
 <div class="chapter">
     <img src="/assets/images/schemaServices.PNG" alt="">
 </div>
+<div class="chapter">
+    <h2>Nos délicieux burgers :</h2>
+
+    <a routerLink="/burgers/add">Ajouter un burger</a>
+
+    <div class="card-container">
+        <div class="burger-card" *ngFor="let burger of burgerList">
+            <div *ngIf="!burger.available" class="available">Indisponible</div>
+            <h2>{{burger.name}}</h2>
+            <img [src]="burger.picture" [alt]="burger.name">
+            <p>{{ burger.price }}€</p>
+            <div class="buttons">
+                <button>Détail 🔎</button>
+                <button>Éditer 📝</button>
+                <button>Supprimer ❌</button>
+            </div>
+        </div>
+    </div>
+</div>
