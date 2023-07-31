@@ -32,6 +32,31 @@
     
     <div class="chapter">
         <h2>Directives</h2>
+        <h3>Component : ngClass</h3>
+        <p>Permet d'attribuer une classe css en fonction d'une expression booléenne</p>
+        <button [ngClass]="{ day: !isNight, night : isNight }" (click)="toggleDayNight()"> Jour 🌞 / Nuit 🌜</button>
+
+        <h3>Structural : ngIf</h3>
+        <p>Permet d'afficher du html contextuellement en fonction d'une expression booléenne</p>
+
+        <div *ngIf="!connected">
+            <p>Veuillez vous connecter</p>
+            <button (click)="login()">Me connecter</button>
+        </div>
+
+        <div *ngIf="connected">
+            <p>Bienvenue bg</p>
+            <button (click)="logout()">Me déconnecter</button>
+        </div>
+
+        <h3>Structural : ngFor</h3>
+        <p>Permet de faire une boucle sur une liste pour l'afficher</p>
+        <p>Les pires conducteurs en vacances :</p>
+        <ul>
+            <li *ngFor="let driver of topWorstDriver; let i = index">
+              Numéro {{ i + 1 }} - {{ driver }}
+            </li>
+        </ul>
     </div>
     
     <div class="chapter">

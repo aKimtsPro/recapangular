@@ -6,15 +6,35 @@ import { Component } from '@angular/core';
   styleUrls: ['./bases.component.scss']
 })
 export class BasesComponent {
+  // BINDINGS -----------------------
   name : string = 'Bob';
 
   eventMsg : string = 'Click on the button';
 
   imgSource : string = 'https://uploads.dailydot.com/2018/10/olli-the-polite-cat.jpg';
+
   clickMe() : void  {
     this.eventMsg = 'You clicked me 👉👈';
   }
 
+  // PIPES --------------------------
+
   today : Date = new Date();
+
+  // DIRECTIVES ---------------------
+  isNight : boolean = false;
+  toggleDayNight() : void {
+    this.isNight = !this.isNight;
+  }
+
+  connected : boolean = false;
+  login() : void {
+    this.connected = true;
+  }
+  logout() : void {
+    this.connected = false;
+  }
+
+  topWorstDriver : string[] = ['Français', 'Hollandais', 'Suisse'];
 
 }
