@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {interval, of} from 'rxjs'
+import {catchError, delay, EMPTY, empty, interval, Observable, of, startWith, switchMap, tap} from 'rxjs'
 import {BurgerApiService} from "./service/burger-api.service";
 import {Burger} from "../services/burger";
 
@@ -13,12 +13,37 @@ export class ObservablesComponent {
   obsCold$ = of( 1,2,3,4,5 );
   // obsHot$ = interval(1000)
 
-  burgers?: Burger[];
+  burgers$?: Observable<Burger[]>;
+  lastReception?: Date;
 
   constructor(private _burgerServ: BurgerApiService) {
     this.demoSub();
 
-    _burgerServ.getBurgers().subscribe( (data: Burger[]) => this.burgers = data )
+    // _burgerServ.getBurgers().subscribe( (data: Burger[]) => this.burgers = data )
+
+    // this.burgers$ = _burgerServ.getBurgers();
+
+    // this.burgers$ = _burgerServ.getBurgers().pipe(
+    //   delay(1000),
+    //   tap((data) => console.log(data)), // reaction au signal 'next'
+    //   catchError((err) => { // reaction au signal 'error'
+    //     console.warn(err);
+    //     return EMPTY;
+    //   })
+    // );
+
+    this.burgers$ = interval(60_000).pipe(
+      startWith(0),
+      switchMap( (data) => _burgerServ.getBurgers() ), // à chaque émission, transforme l'observable
+      delay(1000), // ajoute un délai à chaque émission 'next'
+      tap((data) => this.lastReception = new Date() ), // reaction au signal 'next'
+      catchError((err) => { // reaction au signal 'error'
+        console.warn(err);
+        return EMPTY;
+      })
+    )
+
+
   }
 
 
