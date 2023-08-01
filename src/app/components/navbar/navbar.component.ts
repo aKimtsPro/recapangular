@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {ThermometreService} from "../../observables/service/thermometre.service";
+import {tap} from "rxjs";
 
 @Component({
   selector: 'app-navbar',
@@ -8,11 +9,15 @@ import {ThermometreService} from "../../observables/service/thermometre.service"
 })
 export class NavbarComponent {
 
-  private temperature!: number;
-  private bgClass = 'bg-gray'
+  private temperature!: number
+  bgClass = 'bg-gray'
 
   constructor(private _thermoServ: ThermometreService) {
-    _thermoServ.temperatureSub.subscribe((temp) => {
+    _thermoServ.temperatureSub
+      .pipe(
+        tap( (data) => console.log(data) )
+      )
+      .subscribe((temp) => {
       if( temp > this.temperature )
         this.bgClass = 'bg-red'
       else if ( temp < this.temperature )
