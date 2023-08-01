@@ -15,6 +15,8 @@ import { CommonModule } from '@angular/common';
 import { EditBurgerComponent } from './services/edit-burger/edit-burger.component';
 import {HttpClientModule} from "@angular/common/http";
 import {BurgerApiService} from "./observables/service/burger-api.service";
+import {AddBurgerApiComponent} from "./observables/components/add-burger/add-burger.component";
+import { ThermometreComponent } from './observables/components/thermometre/thermometre.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import {BurgerApiService} from "./observables/service/burger-api.service";
     EnfantComponent,
     AddBurgerComponent,
     DetailBurgerComponent,
-    EditBurgerComponent
+    EditBurgerComponent,
+    AddBurgerApiComponent,
+    ThermometreComponent
   ],
   imports: [
     CommonModule,

@@ -14,4 +14,8 @@ export class BurgerApiService {
     return this._client.get<Burger[]>(this.BASE_URL)
   }
 
+  addBurger(burger: Burger) {
+    return this._client.post<Burger>(this.BASE_URL, burger)
+  }
+
 }
