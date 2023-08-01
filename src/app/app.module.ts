@@ -13,6 +13,8 @@ import { AddBurgerComponent } from './services/add-burger/add-burger.component';
 import { DetailBurgerComponent } from './services/detail-burger/detail-burger.component';
 import { CommonModule } from '@angular/common';
 import { EditBurgerComponent } from './services/edit-burger/edit-burger.component';
+import {HttpClientModule} from "@angular/common/http";
+import {BurgerApiService} from "./observables/service/burger-api.service";
 
 @NgModule({
   declarations: [
@@ -31,9 +33,10 @@ import { EditBurgerComponent } from './services/edit-burger/edit-burger.componen
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [BurgerApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

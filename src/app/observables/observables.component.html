@@ -1,1 +1,8 @@
-<p>observables works!</p>
+<div class="card-container">
+  <div class="burger-card" *ngFor="let burger of burgers">
+    <div *ngIf="!burger.available" class="available">Indisponible</div>
+    <h2>{{burger.name}}</h2>
+    <img [src]="burger.picture" [alt]="burger.name">
+    <p>{{ burger.price }}€</p>
+  </div>
+</div>
