@@ -8,6 +8,7 @@ import { DetailBurgerComponent } from './services/detail-burger/detail-burger.co
 import { EditBurgerComponent } from './services/edit-burger/edit-burger.component';
 import {AddBurgerApiComponent} from "./observables/components/add-burger/add-burger.component";
 import {ThermometreComponent} from "./observables/components/thermometre/thermometre.component";
+import {PanierComponent} from "./observables/components/panier/panier.component";
 
 const routes: Routes = [
   { path : 'bases', component : BasesComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path : 'observables', component : ObservablesComponent },
   { path : 'obs/burger/add', component : AddBurgerApiComponent },
   { path : 'obs/thermometre', component : ThermometreComponent },
+  { path : 'obs/panier', component : PanierComponent },
   { path : 'burgers/add', component : AddBurgerComponent },
   { path : 'burgers/:id', component : DetailBurgerComponent },
   { path : 'burgers/edit/:id', component : EditBurgerComponent },

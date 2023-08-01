@@ -17,6 +17,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {BurgerApiService} from "./observables/service/burger-api.service";
 import {AddBurgerApiComponent} from "./observables/components/add-burger/add-burger.component";
 import { ThermometreComponent } from './observables/components/thermometre/thermometre.component';
+import { PanierComponent } from './observables/components/panier/panier.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ThermometreComponent } from './observables/components/thermometre/therm
     DetailBurgerComponent,
     EditBurgerComponent,
     AddBurgerApiComponent,
-    ThermometreComponent
+    ThermometreComponent,
+    PanierComponent
   ],
   imports: [
     CommonModule,

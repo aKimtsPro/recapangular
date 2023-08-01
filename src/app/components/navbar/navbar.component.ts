@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {ThermometreService} from "../../observables/service/thermometre.service";
 import {tap} from "rxjs";
+import {PanierService} from "../../observables/service/panier.service";
 
 @Component({
   selector: 'app-navbar',
@@ -11,8 +12,12 @@ export class NavbarComponent {
 
   private temperature!: number
   bgClass = 'bg-gray'
+  total!: number
 
-  constructor(private _thermoServ: ThermometreService) {
+  constructor(
+    private _thermoServ: ThermometreService,
+    private _panierServ: PanierService
+  ) {
     _thermoServ.temperatureSub
       .pipe(
         tap( (data) => console.log(data) )
@@ -27,6 +32,8 @@ export class NavbarComponent {
 
       this.temperature = temp
     })
+
+    this._panierServ.prix$.subscribe( total => this.total = total )
   }
 
 }

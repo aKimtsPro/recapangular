@@ -7,6 +7,9 @@
     <h2>{{burger.name}}</h2>
     <img [src]="burger.picture" [alt]="burger.name">
     <p>{{ burger.price }}€</p>
+    <div>
+      <button (click)="ajouterAuPanier( burger )">ajouter au panier</button>
+    </div>
   </div>
 </div>
 

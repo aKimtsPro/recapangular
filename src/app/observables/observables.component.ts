@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {catchError, delay, EMPTY, empty, interval, Observable, of, startWith, switchMap, tap} from 'rxjs'
 import {BurgerApiService} from "./service/burger-api.service";
 import {Burger} from "../services/burger";
+import {PanierService} from "./service/panier.service";
 
 @Component({
   selector: 'app-observables',
@@ -16,7 +17,10 @@ export class ObservablesComponent {
   burgers$?: Observable<Burger[]>;
   lastReception?: Date;
 
-  constructor(private _burgerServ: BurgerApiService) {
+  constructor(
+    private _burgerServ: BurgerApiService,
+    private _panierServ: PanierService
+  ){
     this.demoSub();
 
     // _burgerServ.getBurgers().subscribe( (data: Burger[]) => this.burgers = data )
@@ -35,7 +39,7 @@ export class ObservablesComponent {
     this.burgers$ = interval(60_000).pipe(
       startWith(0),
       switchMap( (data) => _burgerServ.getBurgers() ), // à chaque émission, transforme l'observable
-      delay(1000), // ajoute un délai à chaque émission 'next'
+      // delay(1000), // ajoute un délai à chaque émission 'next'
       tap((data) => this.lastReception = new Date() ), // reaction au signal 'next'
       catchError((err) => { // reaction au signal 'error'
         console.warn(err);
@@ -59,4 +63,9 @@ export class ObservablesComponent {
       complete: () => console.log("FIN")
     })
   }
+
+  ajouterAuPanier(burger: Burger){
+    this._panierServ.ajouter( burger )
+  }
+
 }
